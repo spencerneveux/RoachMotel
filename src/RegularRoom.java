@@ -1,7 +1,7 @@
-public class BaseRoom implements Room{
+public class RegularRoom implements Room{
     @Override
     public String getRoomType() {
-        return "Base Room";
+        return "Regular Room";
     }
 
     @Override
