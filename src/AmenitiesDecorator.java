@@ -12,4 +12,8 @@ abstract class AmenitiesDecorator implements Room {
     public double getCost() {
         return tempRoom.getCost();
     }
+
+    public String toString() {
+        return getRoomType() + " " + getCost();
+    }
 }

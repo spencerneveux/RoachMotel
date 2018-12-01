@@ -1,18 +1,15 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 
-public class RoachMotel {
+public class RoachMotel extends RoomFactory {
     private static RoachMotel firstInstance = null;
-    private ArrayList<Integer> rooms;
+    private int numRooms;
+    private ArrayList<Room> rooms;
 
 
     /**
      * Private constructor to create one instance of Roach Motel
      */
-    private RoachMotel() {
-        rooms = new ArrayList<>(Arrays.asList(101, 102, 103, 104, 105));
-    }
+    private RoachMotel() {}
 
     /**
      * Get instance method to get Roach Motel
@@ -25,8 +22,14 @@ public class RoachMotel {
         return firstInstance;
     }
 
-    public void checkIn(RoachColony rc, String roomType, ArrayList amenities) {
-
+    /**
+     * Method to create rooms in roach motel
+     */
+    public void createRooms() {
+        rooms = new ArrayList<>();
+        for (int i = 0; i < numRooms; i++) {
+            rooms.add(new RegularRoom());
+        }
     }
 
     /**

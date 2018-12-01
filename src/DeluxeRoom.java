@@ -8,4 +8,9 @@ public class DeluxeRoom implements Room{
     public double getCost() {
         return 75.00;
     }
+
+    @Override
+    public String toString() {
+        return getRoomType() + " " + getCost();
+    }
 }
