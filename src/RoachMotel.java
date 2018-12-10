@@ -1,20 +1,24 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class RoachMotel {
     private static RoachMotel firstInstance = null;
+    private RoomFactory rf;
+    private FrontDesk frontDesk;
+    private FrontDeskObserver frontDeskObserver;
     private int numRooms;
     private ArrayList<Room> availableRooms;
     private ArrayList<Room> bookedRooms;
     private ArrayList<Integer> roomNumbers;
-    private RoomFactory rf;
 
 
     /**
      * Private constructor to create one instance of Roach Motel
      */
     private RoachMotel(){
-        numRooms = 5;
+        numRooms = 2;
         rf = new RoomFactory();
+        frontDesk = new FrontDesk();
         availableRooms = new ArrayList<>();
         roomNumbers = new ArrayList<>();
         bookedRooms = new ArrayList<>();
@@ -54,9 +58,18 @@ public class RoachMotel {
         RoachColony roachColony = rc1;
         Room room = rf.checkIn(roomType, amenities);
         System.out.println("Booked Room: " + room);
-        availableRooms.remove(0);
-        roomNumbers.remove(0);
-        bookedRooms.add(room);
+        // If all rooms taken
+        //Add to waitlist
+        if (availableRooms.size() == 0) {
+            frontDeskObserver = new FrontDeskObserver(frontDesk);
+            frontDesk.addWaitList(frontDeskObserver);
+        }
+        //Otherwise book room and remove available rooms
+        else {
+            availableRooms.remove(0);
+            roomNumbers.remove(0);
+            bookedRooms.add(room);
+        }
         return room;
     }
 

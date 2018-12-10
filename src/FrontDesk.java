@@ -11,6 +11,7 @@ public class FrontDesk implements Subject {
 
     @Override
     public void addWaitList(Observing newObserver) {
+
         observers.add(newObserver);
     }
 

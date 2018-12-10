@@ -20,7 +20,14 @@ public class Tester {
         Room r2 = rm.checkin(rc2, "deluxe room", amenities2);
         System.out.println(rc2);
         System.out.println(rm);
-        Double cost = rm.checkOut(r2, 3);
-        System.out.println("Cost of Stay: " + cost);
+        RoachColony rc3 = new RoachColony("third colony", 200, 200);
+        ArrayList amenities3 = new ArrayList();
+        amenities3.add("shower");
+        Room r3 = rm.checkin(rc3, "suite", amenities3);
+
+//        Double cost = rm.checkOut(r2, 3);
+//        System.out.println("Cost of Stay: " + cost);
+//        System.out.println(rm);
+
     }
 }
