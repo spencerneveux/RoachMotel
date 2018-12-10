@@ -2,8 +2,6 @@ public class FoodBar extends AmenitiesDecorator {
 
     public FoodBar(Room newRoom) {
         super(newRoom);
-
-        System.out.println("Adding FoodBar");
     }
 
     public String getRoomType() {

@@ -9,6 +9,7 @@ public class RegularRoom implements Room{
         return 50.00;
     }
 
+
     @Override
     public String toString() {
         return getRoomType() + " " + getCost();

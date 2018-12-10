@@ -20,11 +20,11 @@ public class RoomFactory {
         for (String item : amenities) {
             if (item.equals("spa"))
                 tempRoom = new Spa(tempRoom);
-            if (item.equals("foodbar"))
+            else if (item.equals("foodbar"))
                 tempRoom = new FoodBar(tempRoom);
-            if (item.equals("shower"))
+            else if (item.equals("shower"))
                 tempRoom = new SprayShower(tempRoom);
-            if (item.equals("refillbar"))
+            else if (item.equals("refillbar"))
                 tempRoom = new RefillBar(tempRoom);
         }
 

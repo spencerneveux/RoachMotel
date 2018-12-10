@@ -1,7 +1,7 @@
 public class RoachColony {
     private String name;
     private int population;
-    private int growthRate;
+    private double growthRate;
 
     /**
      * Null Constructor
@@ -14,11 +14,13 @@ public class RoachColony {
      * @param population total population
      * @param growthRate int value of growth rate
      */
-    public RoachColony(String name, int population, int growthRate) {
+    public RoachColony(String name, int population, double growthRate) {
         this.name = name;
         this.population = population;
         this.growthRate = growthRate;
     }
 
-
+    public String toString() {
+        return (name + " " + population);
+    }
 }
