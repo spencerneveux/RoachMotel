@@ -62,7 +62,7 @@ public class RoachMotel {
     }
 
     /**
-     * Method to checkout of room
+     * Method to checkout of rooms
      * @param room room to checkout of
      * @param numDays number of days spent in hotel
      */
